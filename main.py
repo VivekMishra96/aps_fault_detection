@@ -1,17 +1,19 @@
+
 from Sensor.pipeline.training_pipeline import start_training_pipeline
+from Sensor.pipeline.batch_prediction import start_batch_prediction
 
-from Sensor.logger import logging
+file_path="/aps_fault_detection/aps_failure_training_set.csv"
+print(__name__)
+if __name__=="__main__":
+     try:
+          #start_training_pipeline()
+          output_file = start_batch_prediction(input_file_path=file_path)
+          print(output_file)
+     except Exception as e:
+          print(e)
 
 
-def main():
-    try:
-         start_training_pipeline()
-        
-    except Exception as e:
-        logging.error(f"{e}")
-        print(e)
-        
-        
-        
-if __name__ == "__main__":
-    main()
+
+
+
+       
